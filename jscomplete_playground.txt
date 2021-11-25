@@ -9,8 +9,8 @@ function Button(props) {
   //return <div>Hello React</div>
   //return React.createElement('div', null, 'Hello React!!!!')  
   
-  //const handleClick = () => setCounter(counter+20);
-  return <button onClick={() => props.onClickFunction(props.increment)}>+{props.increment}</button>;
+  const handleClick = () => props.onClickFunction(props.increment);
+  return <button onClick={handleClick}>+{props.increment}</button>;
 }
 
 function Display(props) {
