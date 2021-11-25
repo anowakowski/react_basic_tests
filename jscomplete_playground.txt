@@ -1,0 +1,38 @@
+function logRandom() {
+  console.log (Math.random());
+}
+
+
+function Button(props) {
+  //return <div>Hello React</div>
+  //return React.createElement('div', null, 'Hello React!!!!')  
+  
+  //const handleClick = () => setCounter(counter+20);
+  return <button onClick={props.onClickFunction}>+1</button>;
+}
+
+function Display(props) {
+  return (
+    <div>{props.message}</div>
+  );
+}
+
+//App
+
+function App() {
+  const [counter, setCounter] = useState(42);
+  const incrementalCounter = () => setCounter(counter+1);
+  return (
+    <div>
+      <Button  onClickFunction= {incrementalCounter}/>
+      <Display message={counter}/>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  //<Hello />,
+  <App />,
+  //React.createElement(Hello, null),
+  document.getElementById('mountNode'),
+);
